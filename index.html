@@ -100,11 +100,22 @@
     .skills { display: flex; flex-wrap: wrap; gap: 8px; }
     .skill { border: 1px solid var(--border); background: var(--surface); padding: 6px 12px; border-radius: 8px; font-size: 14px; }
 
+    .contact-lead { color: var(--muted); margin: -8px 0 20px; }
+    .contact { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+    .contact-card { flex-direction: row; align-items: center; gap: 14px; }
+    .contact-card svg { width: 28px; height: 28px; fill: var(--accent); flex: none; }
+    .contact-card b { display: block; }
+    .contact-card span { color: var(--muted); font-size: 14px; overflow-wrap: anywhere; }
+
     footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
 
     @media (max-width: 560px) {
       nav .wrap { gap: 12px; }
       nav a:not(.brand) { font-size: 13px; }
+    }
+    @media (max-width: 440px) {
+      nav .brand { display: none; }
+      nav .wrap { justify-content: space-between; }
       header { padding: 48px 0 32px; }
       .timeline li { grid-template-columns: 1fr; }
       .timeline .when { grid-row: auto; grid-column: 1; }
@@ -119,6 +130,7 @@
       <a href="#experience">Experience</a>
       <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 
@@ -226,6 +238,21 @@
         <span class="skill">MySQL</span><span class="skill">Git</span><span class="skill">UiPath</span>
         <span class="skill">SAP</span><span class="skill">VB.NET</span><span class="skill">Jira</span>
         <span class="skill">Trello</span>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p class="contact-lead">Want to work together or just say hi? Reach me by email or on LinkedIn.</p>
+      <div class="contact">
+        <a class="card contact-card" href="mailto:sevimbora@gmail.com">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.22l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.38l-4.71 2.83L15 11.1V5.38zm-.03 6.87L9.4 8.79 8 9.62l-1.4-.83-5.57 3.46A1 1 0 002 13h12a1 1 0 00.97-.75zM1 11.1l4.71-2.89L1 5.38v5.72z"/></svg>
+          <div><b>Email</b><span>sevimbora@gmail.com</span></div>
+        </a>
+        <a class="card contact-card" href="https://www.linkedin.com/in/borasevim/">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.15C0 .51.53 0 1.18 0h13.64C15.47 0 16 .51 16 1.15v13.7c0 .64-.53 1.15-1.18 1.15H1.18C.53 16 0 15.49 0 14.85V1.15zm4.94 12.24V6.17H2.54v7.22h2.4zM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01zm4.91 8.21V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.63v3.87h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.03h-.02l.02-.03V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4z"/></svg>
+          <div><b>LinkedIn</b><span>linkedin.com/in/borasevim</span></div>
+        </a>
       </div>
     </section>
   </main>
