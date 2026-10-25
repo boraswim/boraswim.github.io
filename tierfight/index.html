@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TierFight · Bora Sevim</title>
+  <meta name="description" content="TierFight is a multiplayer tier-list party game: get your friends into a room and rank everything into one shared tier list. Live at tierfight.com." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://boraswim.github.io/tierfight/" />
+  <meta property="og:title" content="TierFight: the multiplayer tier-list party game" />
+  <meta property="og:description" content="Rank together, settle nothing. 2 to 12 players, no account needed, 11 languages. Live at tierfight.com." />
+  <meta property="og:image" content="https://boraswim.github.io/tierfight/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../project.css" />
+</head>
+<body>
+  <nav><div class="wrap"><a class="brand" href="../">Bora Sevim</a><a href="../#projects">Projects</a><a href="../#contact">Contact</a></div></nav>
+  <main class="wrap">
+    <img class="hero" src="preview.png" width="1200" height="627" alt="TierFight: rank together, settle nothing" />
+    <span class="badge">🟢 Live at tierfight.com</span>
+    <h1>TierFight</h1>
+    <p class="lead">A multiplayer tier-list party game. Friends join a room with a six-character code and take turns moving cards between the S to F tiers until the rounds run out, ending up with one shared (and hotly disputed) tier list.</p>
+    <div class="links">
+      <a class="btn primary" href="https://tierfight.com">Play at tierfight.com</a>
+    </div>
+
+    <h2>The game</h2>
+    <ul>
+      <li><b>Jump straight in:</b> 2 to 12 players, no account needed. The host picks a collection, the turn timer and the number of rounds.</li>
+      <li><b>Every turn counts:</b> swap two cards, bring one in from storage, send one back, or skip, with drag and drop, clicks or the keyboard.</li>
+      <li><b>Powerups:</b> one single-use powerup each per game, such as Lock, Banish, Mute, Shuffle, New Tier and New Item.</li>
+      <li><b>Room chat</b> and a <b>new game</b> button that keeps the lobby together; the finished board exports as a PNG.</li>
+      <li><b>Collections:</b> built-in sets like Turkish Desserts and World Street Foods using freely licensed photos, plus player-made collections reviewed by moderators.</li>
+      <li><b>For everyone:</b> 11 languages including right-to-left Arabic, light and dark mode, music and sound effects.</li>
+    </ul>
+
+    <h2>Screenshot</h2>
+    <div class="gallery" style="grid-template-columns: 1fr;">
+      <img src="home.jpg" width="786" height="669" alt="The TierFight start screen with a sample Turkish Desserts tier list" loading="lazy" />
+    </div>
+
+    <h2>Under the hood</h2>
+    <ul>
+      <li>React on Vinext, served by a single Cloudflare Worker with a D1 (SQLite) database and Drizzle migrations.</li>
+      <li>Google sign-in for creating collections, with hashed session cookies and a moderation queue.</li>
+      <li>Automated tests run on every deploy, and pushes to <code>main</code> deploy automatically.</li>
+    </ul>
+
+    <h2>Built with</h2>
+    <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Cloudflare Workers</span><span class="tag">D1 / SQLite</span><span class="tag">Drizzle</span></div>
+  </main>
+  <footer><div class="wrap">© 2026 Bora Sevim · <a href="../">boraswim.github.io</a></div></footer>
+</body>
+</html>
