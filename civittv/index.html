@@ -16,34 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
-  <style>
-    :root { --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #57534e; --border: #e7e5e4; --accent: #0e75b6; --accent-soft: #e0f0fa; }
-    @media (prefers-color-scheme: dark) {
-      :root { --bg: #0f1115; --surface: #171a21; --text: #ececec; --muted: #a1a1aa; --border: #262a33; --accent: #4fb3f0; --accent-soft: #13283a; }
-    }
-    * { box-sizing: border-box; }
-    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
-    a { color: var(--accent); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
-    nav { border-bottom: 1px solid var(--border); }
-    nav .wrap { display: flex; align-items: center; height: 56px; gap: 16px; }
-    nav .brand { font-weight: 700; color: var(--text); margin-right: auto; }
-    nav a:not(.brand) { color: var(--muted); font-size: 14px; }
-    .hero { width: 100%; height: auto; display: block; border-radius: 14px; margin: 40px 0 28px; border: 1px solid var(--border); }
-    h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -.02em; }
-    .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
-    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
-    .btn { display: inline-flex; align-items: center; padding: 9px 16px; border-radius: 8px; font-weight: 500; font-size: 14px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
-    .btn:hover { text-decoration: none; border-color: var(--accent); }
-    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-    h2 { font-size: 20px; margin: 32px 0 12px; }
-    ul { padding-left: 20px; margin: 0; }
-    li { margin: 6px 0; }
-    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
-    .tag { font: 500 12px "JetBrains Mono", monospace; background: var(--accent-soft); color: var(--accent); padding: 3px 9px; border-radius: 999px; }
-    footer { margin-top: 48px; padding: 24px 0 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
-  </style>
+  <link rel="stylesheet" href="../project.css" />
 </head>
 <body>
   <nav><div class="wrap"><a class="brand" href="../">Bora Sevim</a><a href="../#projects">Projects</a><a href="../#contact">Contact</a></div></nav>
