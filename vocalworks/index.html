@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vocalworks · Bora Sevim</title>
+  <meta name="description" content="A Windows app for singing covers that sound like the original: record your vocal, and Vocalworks matches the original's production automatically and mixes your cover, all locally." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://boraswim.github.io/vocalworks/" />
+  <meta property="og:title" content="Vocalworks: sing covers that sound like the original" />
+  <meta property="og:description" content="Windows app that records your vocal, matches the original vocal's production automatically and mixes your cover, all on your own PC." />
+  <meta property="og:image" content="https://boraswim.github.io/vocalworks/preview.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="627" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #57534e; --border: #e7e5e4; --accent: #0e75b6; --accent-soft: #e0f0fa; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg: #0f1115; --surface: #171a21; --text: #ececec; --muted: #a1a1aa; --border: #262a33; --accent: #4fb3f0; --accent-soft: #13283a; }
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.6 Inter, system-ui, sans-serif; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+    nav { border-bottom: 1px solid var(--border); }
+    nav .wrap { display: flex; align-items: center; height: 56px; gap: 16px; }
+    nav .brand { font-weight: 700; color: var(--text); margin-right: auto; }
+    nav a:not(.brand) { color: var(--muted); font-size: 14px; }
+    .hero { width: 100%; height: auto; display: block; border-radius: 14px; margin: 40px 0 28px; border: 1px solid var(--border); }
+    h1 { font-size: clamp(30px, 5vw, 42px); line-height: 1.15; margin: 0 0 12px; letter-spacing: -.02em; }
+    .lead { font-size: 18px; color: var(--muted); margin: 0 0 24px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px; }
+    .btn { display: inline-flex; align-items: center; padding: 9px 16px; border-radius: 8px; font-weight: 500; font-size: 14px; border: 1px solid var(--border); background: var(--surface); color: var(--text); }
+    .btn:hover { text-decoration: none; border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    h2 { font-size: 20px; margin: 32px 0 12px; }
+    ul { padding-left: 20px; margin: 0; }
+    li { margin: 6px 0; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 8px 0 0; }
+    .tag { font: 500 12px "JetBrains Mono", monospace; background: var(--accent-soft); color: var(--accent); padding: 3px 9px; border-radius: 999px; }
+    footer { margin-top: 48px; padding: 24px 0 40px; border-top: 1px solid var(--border); color: var(--muted); font-size: 14px; }
+  </style>
+</head>
+<body>
+  <nav><div class="wrap"><a class="brand" href="../">Bora Sevim</a><a href="../#projects">Projects</a><a href="../#contact">Contact</a></div></nav>
+  <main class="wrap">
+    <img class="hero" src="preview.png" width="1200" height="627" alt="Vocalworks: sing covers that sound like the original" />
+    <h1>Vocalworks</h1>
+    <p class="lead">A Windows app for singing covers. Pick a song, record yourself singing along, and get the song back with your voice in it, processed to sound like the original vocal.</p>
+    <div class="links">
+      <a class="btn primary" href="https://github.com/boraswim/vocalworks/releases/latest">Download for Windows</a>
+      <a class="btn" href="https://github.com/boraswim/vocalworks">Source on GitHub</a>
+    </div>
+
+    <h2>What it does</h2>
+    <ul>
+      <li><b>Matches the original automatically:</b> pitch correction, tone, compression, room, stereo width, distortion, tape hiss and loudness are measured from the original vocal and applied to yours.</li>
+      <li><b>Records in the app:</b> the song plays in your headphones with a count-in and karaoke-style synced lyrics, with or without the original singer.</li>
+      <li><b>Runs on your own PC:</b> no account needed. Demucs splits vocals from the instrumental locally; everything else is classic signal processing.</li>
+      <li><b>One-click install:</b> an installer sets up Python and the app's libraries, using an NVIDIA GPU when there is one.</li>
+    </ul>
+
+    <h2>Built with</h2>
+    <div class="tags"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">Demucs</span><span class="tag">DSP</span></div>
+  </main>
+  <footer><div class="wrap">© 2026 Bora Sevim · <a href="../">boraswim.github.io</a></div></footer>
+</body>
+</html>
