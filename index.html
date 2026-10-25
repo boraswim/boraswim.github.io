@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bora Sevim</title>
+  <meta name="description" content="Bora Sevim: computer engineer, RPA developer and game developer based in Istanbul." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --text: #1c1917;
+      --muted: #57534e;
+      --border: #e7e5e4;
+      --accent: #0e75b6;
+      --accent-soft: #e0f0fa;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f1115;
+        --surface: #171a21;
+        --text: #ececec;
+        --muted: #a1a1aa;
+        --border: #262a33;
+        --accent: #4fb3f0;
+        --accent-soft: #13283a;
+      }
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.6 Inter, system-ui, sans-serif;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+    nav {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav .wrap { display: flex; gap: 20px; align-items: center; height: 56px; overflow-x: auto; }
+    nav .brand { font-weight: 700; color: var(--text); margin-right: auto; white-space: nowrap; }
+    nav a:not(.brand) { color: var(--muted); font-size: 14px; white-space: nowrap; }
+
+    header { padding: 72px 0 48px; }
+    .eyebrow { font: 500 13px "JetBrains Mono", monospace; color: var(--accent); letter-spacing: .04em; }
+    h1 { font-size: clamp(36px, 6vw, 52px); line-height: 1.1; margin: 12px 0 16px; letter-spacing: -.02em; }
+    .lead { font-size: 18px; color: var(--muted); max-width: 620px; margin: 0 0 28px; }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 16px; border-radius: 8px; font-weight: 500; font-size: 14px;
+      border: 1px solid var(--border); background: var(--surface); color: var(--text);
+    }
+    .btn:hover { text-decoration: none; border-color: var(--accent); }
+    .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn svg { width: 16px; height: 16px; fill: currentColor; }
+
+    section { padding: 40px 0; border-top: 1px solid var(--border); }
+    h2 { font-size: 22px; margin: 0 0 24px; letter-spacing: -.01em; }
+
+    .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+    .fact { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+    .fact b { display: block; margin-bottom: 4px; }
+    .fact span { color: var(--muted); font-size: 14px; }
+
+    .timeline { list-style: none; margin: 0; padding: 0; }
+    .timeline li {
+      display: grid; grid-template-columns: 1fr auto; gap: 4px 16px;
+      padding: 14px 0; border-bottom: 1px dashed var(--border);
+    }
+    .timeline li:last-child { border-bottom: 0; }
+    .timeline .role { font-weight: 600; }
+    .timeline .org { color: var(--muted); grid-column: 1; }
+    .timeline .when { font: 500 13px "JetBrains Mono", monospace; color: var(--muted); grid-row: 1; grid-column: 2; white-space: nowrap; }
+
+    .projects { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .card {
+      display: flex; flex-direction: column;
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px;
+      transition: border-color .15s, transform .15s;
+    }
+    a.card { color: inherit; }
+    a.card:hover { text-decoration: none; border-color: var(--accent); transform: translateY(-2px); }
+    .card h3 { margin: 0 0 6px; font-size: 16px; }
+    .card p { margin: 0 0 14px; color: var(--muted); font-size: 14px; flex: 1; }
+    .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .tag { font: 500 11.5px "JetBrains Mono", monospace; background: var(--accent-soft); color: var(--accent); padding: 3px 8px; border-radius: 999px; }
+    .badge { font-size: 11px; font-weight: 600; color: #b45309; margin-left: 6px; }
+
+    .skills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .skill { border: 1px solid var(--border); background: var(--surface); padding: 6px 12px; border-radius: 8px; font-size: 14px; }
+
+    footer { padding: 32px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--border); }
+
+    @media (max-width: 560px) {
+      nav .wrap { gap: 12px; }
+      nav a:not(.brand) { font-size: 13px; }
+      header { padding: 48px 0 32px; }
+      .timeline li { grid-template-columns: 1fr; }
+      .timeline .when { grid-row: auto; grid-column: 1; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="wrap">
+      <a class="brand" href="#">Bora Sevim</a>
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <header>
+      <div class="eyebrow">ISTANBUL, TÜRKIYE</div>
+      <h1>Hi, I'm Bora Sevim 👋</h1>
+      <p class="lead">Computer engineer, RPA developer and game developer. I automate business processes with UiPath and SAP by day, and build games and tools in Unity, Godot and beyond.</p>
+      <div class="links">
+        <a class="btn primary" href="https://github.com/boraswim">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/borasevim/">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 1.15C0 .51.53 0 1.18 0h13.64C15.47 0 16 .51 16 1.15v13.7c0 .64-.53 1.15-1.18 1.15H1.18C.53 16 0 15.49 0 14.85V1.15zm4.94 12.24V6.17H2.54v7.22h2.4zM3.74 5.18c.84 0 1.36-.55 1.36-1.25-.02-.71-.52-1.25-1.34-1.25-.82 0-1.36.54-1.36 1.25 0 .7.52 1.25 1.33 1.25h.01zm4.91 8.21V9.36c0-.22.02-.43.08-.59.17-.43.57-.88 1.23-.88.87 0 1.22.66 1.22 1.63v3.87h2.4V9.25c0-2.22-1.18-3.25-2.76-3.25-1.27 0-1.84.7-2.16 1.19v.03h-.02l.02-.03V6.17h-2.4c.03.68 0 7.22 0 7.22h2.4z"/></svg>
+          LinkedIn
+        </a>
+        <a class="btn" href="mailto:sevimbora@gmail.com">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M0 4a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2H2a2 2 0 01-2-2V4zm2-1a1 1 0 00-1 1v.22l7 4.2 7-4.2V4a1 1 0 00-1-1H2zm13 2.38l-4.71 2.83L15 11.1V5.38zm-.03 6.87L9.4 8.79 8 9.62l-1.4-.83-5.57 3.46A1 1 0 002 13h12a1 1 0 00.97-.75zM1 11.1l4.71-2.89L1 5.38v5.72z"/></svg>
+          sevimbora@gmail.com
+        </a>
+      </div>
+    </header>
+
+    <section id="about">
+      <h2>About me</h2>
+      <div class="facts">
+        <div class="fact"><b>🎓 MSc, Computer Engineering</b><span>Yıldız Technical University, 2026 – 2028</span></div>
+        <div class="fact"><b>🎓 BSc, Computer Engineering</b><span>Istanbul University – Cerrahpaşa, 2025 · GPA 3.61/4.0</span></div>
+        <div class="fact"><b>🏆 Special Jury Award</b><span>Google Game &amp; App Academy Bootcamp'24, with <i>Escape of The King</i></span></div>
+        <div class="fact"><b>🌍 Languages</b><span>Turkish (native) · English (C1) · German (B1)</span></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="timeline">
+        <li><span class="role">Junior RPA Developer</span><span class="org">NTT DATA Business Solutions</span><span class="when">Jul 2025 – Present</span></li>
+        <li><span class="role">Project Student – Junior RPA Developer</span><span class="org">BSH Home Appliances</span><span class="when">Aug 2024 – Jul 2025</span></li>
+        <li><span class="role">Game Developer</span><span class="org">Volvox Games</span><span class="when">Oct 2024 – Jun 2025</span></li>
+        <li><span class="role">Project Manager</span><span class="org">OTK · 20 students across 4 game teams</span><span class="when">Sep 2021 – Jun 2025</span></li>
+        <li><span class="role">Web Development Intern</span><span class="org">Ciner Publishing Holding</span><span class="when">Jun 2023 – Aug 2023</span></li>
+      </ul>
+    </section>
+
+    <section id="projects">
+      <h2>Highlighted projects</h2>
+      <div class="projects">
+        <a class="card" href="https://github.com/boraswim/vocalworks">
+          <h3>Vocalworks</h3>
+          <p>Windows app for singing covers: records your vocal, matches the original's production (pitch, tone, compression, room…) automatically and mixes the cover, all locally.</p>
+          <div class="tags"><span class="tag">Python</span><span class="tag">Demucs</span><span class="tag">DSP</span></div>
+        </a>
+        <a class="card" href="https://github.com/boraswim/civit-tv">
+          <h3>ÇivitTV</h3>
+          <p>Apple TV 4K-style home screen for Android TV with content shelves, weather, prayer times and a remote "mouse mode", plus debloat scripts.</p>
+          <div class="tags"><span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">PowerShell</span></div>
+        </a>
+        <a class="card" href="https://store.steampowered.com/app/4905380/Hellmate_Chess_Deck_Builder/">
+          <h3>HELLMATE</h3>
+          <p>Chess deck-builder developed with Volvox Games, with a demo published on Steam.</p>
+          <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
+        </a>
+        <div class="card">
+          <h3>Escape of The King <span class="badge">🏆 Award</span></h3>
+          <p>Chess-based game that won the Special Jury Award at Google Bootcamp'24, among 3000+ contestants.</p>
+          <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
+        </div>
+        <div class="card">
+          <h3>TierFight</h3>
+          <p>Multiplayer tier-list party game with shared rooms, customizable collections and English/Turkish support. In development.</p>
+          <div class="tags"><span class="tag">TypeScript</span></div>
+        </div>
+        <div class="card">
+          <h3>UiPath Business Process</h3>
+          <p>End-to-end RPA process built from a business unit's PDD, including UAT sessions with the business.</p>
+          <div class="tags"><span class="tag">UiPath</span><span class="tag">VB.NET</span><span class="tag">SAP</span></div>
+        </div>
+        <div class="card">
+          <h3>Walkverse</h3>
+          <p>Step-counting app with a global leaderboard and Firebase authentication.</p>
+          <div class="tags"><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Firebase</span></div>
+        </div>
+        <a class="card" href="https://github.com/boraswim/Web-SEO-Analysis-Project">
+          <h3>Web SEO Analysis</h3>
+          <p>Calculates a page's SEO score using Google criteria and analyzes its HTML.</p>
+          <div class="tags"><span class="tag">Next.js</span><span class="tag">React</span></div>
+        </a>
+        <a class="card" href="https://github.com/boraswim/GameJamSubmissions">
+          <h3>Game Jam Submissions</h3>
+          <p>Every game jam I've joined since 2022.</p>
+          <div class="tags"><span class="tag">Unity</span><span class="tag">C#</span></div>
+        </a>
+      </div>
+      <p style="margin-top:20px"><a href="https://github.com/boraswim?tab=repositories">See all repositories →</a></p>
+    </section>
+
+    <section id="skills">
+      <h2>Languages &amp; tools</h2>
+      <div class="skills">
+        <span class="skill">C#</span><span class="skill">Unity</span><span class="skill">Godot</span>
+        <span class="skill">JavaScript</span><span class="skill">TypeScript</span><span class="skill">React</span>
+        <span class="skill">Node.js</span><span class="skill">Flutter</span><span class="skill">Dart</span>
+        <span class="skill">Firebase</span><span class="skill">Python</span><span class="skill">Kotlin</span>
+        <span class="skill">MySQL</span><span class="skill">Git</span><span class="skill">UiPath</span>
+        <span class="skill">SAP</span><span class="skill">VB.NET</span><span class="skill">Jira</span>
+        <span class="skill">Trello</span>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">© 2026 Bora Sevim · <a href="https://github.com/boraswim">github.com/boraswim</a></div>
+  </footer>
+</body>
+</html>
