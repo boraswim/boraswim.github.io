@@ -1,0 +1,33 @@
+/* Shared by every page: theme colours (dark by default) and the EN/TR and light/dark switches. */
+:root {
+  --bg: #0f1115; --surface: #171a21; --text: #ececec; --muted: #a1a1aa;
+  --border: #262a33; --accent: #4fb3f0; --accent-soft: #13283a;
+  color-scheme: dark;
+}
+:root[data-theme="light"] {
+  --bg: #fafaf9; --surface: #ffffff; --text: #1c1917; --muted: #57534e;
+  --border: #e7e5e4; --accent: #0e75b6; --accent-soft: #e0f0fa;
+  color-scheme: light;
+}
+
+/* Each piece of text exists once per language; show only the current one (English without JS). */
+html:not([data-lang="tr"]) [lang="tr"],
+html[data-lang="tr"] [lang="en"] { display: none !important; }
+
+.switches { display: flex; align-items: center; gap: 6px; flex: none; margin-left: 8px; }
+.seg { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; overflow: hidden; }
+.seg button, .theme-btn {
+  font: 600 12px/1 Inter, system-ui, sans-serif; height: 30px; border: 0;
+  background: var(--surface); color: var(--muted); cursor: pointer;
+}
+.seg button { padding: 0 9px; }
+.seg button + button { border-left: 1px solid var(--border); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: #fff; }
+.theme-btn { width: 32px; border: 1px solid var(--border); border-radius: 8px; display: inline-grid; place-items: center; }
+.seg button:hover, .theme-btn:hover { color: var(--text); }
+.seg button[aria-pressed="true"]:hover { color: #fff; }
+.theme-btn svg { width: 16px; height: 16px; fill: currentColor; }
+.theme-btn .moon { display: none; }
+:root[data-theme="light"] .theme-btn .sun { display: none; }
+:root[data-theme="light"] .theme-btn .moon { display: block; }
+main a { overflow-wrap: anywhere; }

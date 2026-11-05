@@ -17,41 +17,43 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../project.css" />
+  <link rel="stylesheet" href="/site.css" />
+  <script src="/site.js"></script>
 </head>
 <body>
-  <nav><div class="wrap"><a class="brand" href="../">Bora Sevim</a><a href="../#projects">Projects</a><a href="../#contact">Contact</a></div></nav>
+  <nav><div class="wrap"><a class="brand" href="../">Bora Sevim</a><a href="../#projects"><span lang="en">Projects</span><span lang="tr">Projeler</span></a><a href="../#contact"><span lang="en">Contact</span><span lang="tr">İletişim</span></a></div></nav>
   <main class="wrap">
     <img class="hero" src="preview.png" width="1200" height="627" alt="TierFight: rank together, settle nothing" />
-    <span class="badge">🟢 Live at tierfight.com</span>
+    <span class="badge"><span lang="en">🟢 Live at tierfight.com</span><span lang="tr">🟢 tierfight.com&#39;da yayında</span></span>
     <h1>TierFight</h1>
-    <p class="lead">A multiplayer tier-list party game. Friends join a room with a six-character code and take turns moving cards between the S to F tiers until the rounds run out, ending up with one shared (and hotly disputed) tier list.</p>
+    <p class="lead" lang="en">A multiplayer tier-list party game. Friends join a room with a six-character code and take turns moving cards between the S to F tiers until the rounds run out, ending up with one shared (and hotly disputed) tier list.</p><p class="lead" lang="tr">Çok oyunculu bir tier list parti oyunu. Arkadaşlar altı karakterlik bir kodla odaya katılır ve turlar bitene kadar sırayla kartları S'den F'ye kademeler arasında taşır; sonunda ortak (ve hararetle tartışılan) tek bir tier list çıkar.</p>
     <div class="links">
-      <a class="btn primary" href="https://tierfight.com">Play at tierfight.com</a>
+      <a class="btn primary" href="https://tierfight.com"><span lang="en">Play at tierfight.com</span><span lang="tr">tierfight.com'da oyna</span></a>
     </div>
 
-    <h2>The game</h2>
+    <h2><span lang="en">The game</span><span lang="tr">Oyun</span></h2>
     <ul>
-      <li><b>Jump straight in:</b> 2 to 12 players, no account needed. The host picks a collection, the turn timer and the number of rounds.</li>
-      <li><b>Every turn counts:</b> swap two cards, bring one in from storage, send one back, or skip, with drag and drop, clicks or the keyboard.</li>
-      <li><b>Powerups:</b> one single-use powerup each per game, such as Lock, Banish, Mute, Shuffle, New Tier and New Item.</li>
-      <li><b>Room chat</b> and a <b>new game</b> button that keeps the lobby together; the finished board exports as a PNG.</li>
-      <li><b>Collections:</b> built-in sets like Turkish Desserts and World Street Foods using freely licensed photos, plus player-made collections reviewed by moderators.</li>
-      <li><b>For everyone:</b> 11 languages including right-to-left Arabic, light and dark mode, music and sound effects.</li>
+      <li lang="en"><b>Jump straight in:</b> 2 to 12 players, no account needed. The host picks a collection, the turn timer and the number of rounds.</li><li lang="tr"><b>Hemen başlayın:</b> 2 ila 12 oyuncu, hesap gerekmez. Oda sahibi koleksiyonu, tur süresini ve tur sayısını seçer.</li>
+      <li lang="en"><b>Every turn counts:</b> swap two cards, bring one in from storage, send one back, or skip, with drag and drop, clicks or the keyboard.</li><li lang="tr"><b>Her tur önemli:</b> iki kartın yerini değiştirin, depodan bir kart getirin, bir kartı geri gönderin ya da pas geçin; sürükle bırak, tıklama veya klavyeyle.</li>
+      <li lang="en"><b>Powerups:</b> one single-use powerup each per game, such as Lock, Banish, Mute, Shuffle, New Tier and New Item.</li><li lang="tr"><b>Güçlendirmeler:</b> her oyunda herkese bir kez kullanılabilen bir güçlendirme; Lock, Banish, Mute, Shuffle, New Tier ve New Item gibi.</li>
+      <li lang="en"><b>Room chat</b> and a <b>new game</b> button that keeps the lobby together; the finished board exports as a PNG.</li><li lang="tr"><b>Oda sohbeti</b> ve lobiyi bir arada tutan bir <b>yeni oyun</b> düğmesi; bitmiş tahta PNG olarak dışa aktarılabilir.</li>
+      <li lang="en"><b>Collections:</b> built-in sets like Turkish Desserts and World Street Foods using freely licensed photos, plus player-made collections reviewed by moderators.</li><li lang="tr"><b>Koleksiyonlar:</b> özgür lisanslı fotoğraflarla Türk Tatlıları ve Dünya Sokak Lezzetleri gibi hazır setler, ayrıca moderatörlerin incelediği, oyuncuların hazırladığı koleksiyonlar.</li>
+      <li lang="en"><b>For everyone:</b> 11 languages including right-to-left Arabic, light and dark mode, music and sound effects.</li><li lang="tr"><b>Herkes için:</b> sağdan sola Arapça dahil 11 dil, açık ve koyu tema, müzik ve ses efektleri.</li>
     </ul>
 
-    <h2>Screenshot</h2>
+    <h2><span lang="en">Screenshot</span><span lang="tr">Ekran görüntüsü</span></h2>
     <div class="gallery" style="grid-template-columns: 1fr;">
       <img src="home.jpg" width="786" height="669" alt="The TierFight start screen with a sample Turkish Desserts tier list" loading="lazy" />
     </div>
 
-    <h2>Under the hood</h2>
+    <h2><span lang="en">Under the hood</span><span lang="tr">Teknik altyapı</span></h2>
     <ul>
-      <li>React on Vinext, served by a single Cloudflare Worker with a D1 (SQLite) database and Drizzle migrations.</li>
-      <li>Google sign-in for creating collections, with hashed session cookies and a moderation queue.</li>
-      <li>Automated tests run on every deploy, and pushes to <code>main</code> deploy automatically.</li>
+      <li lang="en">React on Vinext, served by a single Cloudflare Worker with a D1 (SQLite) database and Drizzle migrations.</li><li lang="tr">Vinext üzerinde React; D1 (SQLite) veritabanı ve Drizzle migration'larıyla tek bir Cloudflare Worker'dan sunuluyor.</li>
+      <li lang="en">Google sign-in for creating collections, with hashed session cookies and a moderation queue.</li><li lang="tr">Koleksiyon oluşturmak için Google ile giriş; hash'lenmiş oturum çerezleri ve bir moderasyon kuyruğu.</li>
+      <li lang="en">Automated tests run on every deploy, and pushes to <code>main</code> deploy automatically.</li><li lang="tr">Her yayına almada otomatik testler çalışır; <code>main</code> dalına yapılan push'lar otomatik olarak yayına alınır.</li>
     </ul>
 
-    <h2>Built with</h2>
+    <h2><span lang="en">Built with</span><span lang="tr">Kullanılan teknolojiler</span></h2>
     <div class="tags"><span class="tag">TypeScript</span><span class="tag">React</span><span class="tag">Cloudflare Workers</span><span class="tag">D1 / SQLite</span><span class="tag">Drizzle</span></div>
   </main>
   <footer><div class="wrap">© 2026 Bora Sevim · <a href="../">boraswim.github.io</a></div></footer>

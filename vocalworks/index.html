@@ -17,29 +17,31 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../project.css" />
+  <link rel="stylesheet" href="/site.css" />
+  <script src="/site.js"></script>
 </head>
 <body>
-  <nav><div class="wrap"><a class="brand" href="../">Bora Sevim</a><a href="../#projects">Projects</a><a href="../#contact">Contact</a></div></nav>
+  <nav><div class="wrap"><a class="brand" href="../">Bora Sevim</a><a href="../#projects"><span lang="en">Projects</span><span lang="tr">Projeler</span></a><a href="../#contact"><span lang="en">Contact</span><span lang="tr">İletişim</span></a></div></nav>
   <main class="wrap">
     <img class="hero" src="preview.png" width="1200" height="627" alt="Vocalworks: sing covers that sound like the original" />
-    <a href="https://hub.xerj.org/contributors/boraswim"><span class="badge">🧠 Selected for the XERJ Corpus Hub</span></a>
+    <a href="https://hub.xerj.org/contributors/boraswim"><span class="badge"><span lang="en">🧠 Selected for the XERJ Corpus Hub</span><span lang="tr">🧠 XERJ Corpus Hub&#39;a seçildi</span></span></a>
     <h1>Vocalworks</h1>
-    <p class="lead">A Windows app for singing covers. Pick a song, record yourself singing along, and get the song back with your voice in it, processed to sound like the original vocal.</p>
+    <p class="lead" lang="en">A Windows app for singing covers. Pick a song, record yourself singing along, and get the song back with your voice in it, processed to sound like the original vocal.</p><p class="lead" lang="tr">Cover şarkı söylemek için bir Windows uygulaması. Bir şarkı seçin, eşlik ederek kendinizi kaydedin ve şarkıyı, orijinal vokal gibi duyulacak şekilde işlenmiş kendi sesinizle geri alın.</p>
     <div class="links">
-      <a class="btn primary" href="https://github.com/boraswim/vocalworks/releases/latest">Download for Windows</a>
-      <a class="btn" href="https://github.com/boraswim/vocalworks">Source on GitHub</a>
+      <a class="btn primary" href="https://github.com/boraswim/vocalworks/releases/latest"><span lang="en">Download for Windows</span><span lang="tr">Windows için indir</span></a>
+      <a class="btn" href="https://github.com/boraswim/vocalworks"><span lang="en">Source on GitHub</span><span lang="tr">GitHub'da kaynak kodu</span></a>
       <a class="btn" href="https://hub.xerj.org/contributors/boraswim">XERJ Corpus Hub</a>
     </div>
 
-    <h2>What it does</h2>
+    <h2><span lang="en">What it does</span><span lang="tr">Neler yapar</span></h2>
     <ul>
-      <li><b>Matches the original automatically:</b> pitch correction, tone, compression, room, stereo width, distortion, tape hiss and loudness are measured from the original vocal and applied to yours.</li>
-      <li><b>Records in the app:</b> the song plays in your headphones with a count-in and karaoke-style synced lyrics, with or without the original singer.</li>
-      <li><b>Runs on your own PC:</b> no account needed. Demucs splits vocals from the instrumental locally; everything else is classic signal processing.</li>
-      <li><b>One-click install:</b> an installer sets up Python and the app's libraries, using an NVIDIA GPU when there is one.</li>
+      <li lang="en"><b>Matches the original automatically:</b> pitch correction, tone, compression, room, stereo width, distortion, tape hiss and loudness are measured from the original vocal and applied to yours.</li><li lang="tr"><b>Orijinali otomatik olarak eşler:</b> pitch düzeltme, ton, kompresyon, oda, stereo genişlik, distorsiyon, bant cızırtısı ve ses yüksekliği orijinal vokalden ölçülür ve sizin vokalinize uygulanır.</li>
+      <li lang="en"><b>Records in the app:</b> the song plays in your headphones with a count-in and karaoke-style synced lyrics, with or without the original singer.</li><li lang="tr"><b>Uygulama içinde kayıt:</b> şarkı, geri sayım ve karaoke tarzı senkron sözlerle kulaklığınızda çalar; orijinal şarkıcıyla ya da onsuz.</li>
+      <li lang="en"><b>Runs on your own PC:</b> no account needed. Demucs splits vocals from the instrumental locally; everything else is classic signal processing.</li><li lang="tr"><b>Kendi bilgisayarınızda çalışır:</b> hesap gerekmez. Demucs vokali enstrümantalden yerel olarak ayırır; geri kalan her şey klasik sinyal işlemedir.</li>
+      <li lang="en"><b>One-click install:</b> an installer sets up Python and the app's libraries, using an NVIDIA GPU when there is one.</li><li lang="tr"><b>Tek tıkla kurulum:</b> bir yükleyici Python'u ve uygulamanın kütüphanelerini kurar, varsa NVIDIA GPU'dan yararlanır.</li>
     </ul>
 
-    <h2>Built with</h2>
+    <h2><span lang="en">Built with</span><span lang="tr">Kullanılan teknolojiler</span></h2>
     <div class="tags"><span class="tag">Python</span><span class="tag">PySide6</span><span class="tag">Demucs</span><span class="tag">DSP</span></div>
   </main>
   <footer><div class="wrap">© 2026 Bora Sevim · <a href="../">boraswim.github.io</a></div></footer>
