@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pirate Token Roller</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+    font-family: system-ui, sans-serif;
+    background: #14161c; color: #eee;
+    overflow: hidden;
+  }
+  .card {
+    text-align: center; padding: 32px 24px; max-width: 420px; width: calc(100% - 32px);
+    background: #1e2129; border-radius: 16px; box-shadow: 0 10px 40px #0008;
+    position: relative; z-index: 2;
+  }
+  h1 { margin: 0 0 4px; font-size: 1.6rem; }
+  .odds { color: #999; margin-bottom: 24px; }
+  button {
+    font-size: 1.2rem; font-weight: 700; padding: 14px 28px; margin: 6px;
+    border: 0; border-radius: 10px; cursor: pointer;
+    background: #f5b301; color: #222;
+  }
+  button.secondary { background: #3a3f4b; color: #eee; font-size: 1rem; }
+  button:active { transform: scale(0.97); }
+  .result { font-size: 1.3rem; min-height: 2em; margin: 20px 0 8px; }
+  .stats { color: #aaa; font-size: 0.95rem; line-height: 1.6; }
+
+  /* ---------- WIN MODE ---------- */
+  body.win {
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+    background-size: 400% 400%;
+    animation: rainbowBg 2s linear infinite;
+  }
+  body.win .card {
+    background: #000a;
+    animation: wobble 0.6s ease-in-out infinite alternate, hue 1.5s linear infinite;
+  }
+  body.win .result {
+    font-size: 2.6rem; font-weight: 900;
+    background: linear-gradient(90deg, red, orange, yellow, lime, cyan, blue, violet, red);
+    background-size: 200% auto;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: textShift 1s linear infinite, pulse 0.5s ease-in-out infinite alternate;
+  }
+  @keyframes rainbowBg { 0% { background-position: 0% 50%; } 100% { background-position: 400% 50%; } }
+  @keyframes textShift { to { background-position: 200% center; } }
+  @keyframes pulse { from { transform: scale(1); } to { transform: scale(1.15); } }
+  @keyframes wobble { from { transform: rotate(-3deg) scale(1); } to { transform: rotate(3deg) scale(1.05); } }
+  @keyframes hue { to { filter: hue-rotate(360deg); } }
+
+  .confetti {
+    position: fixed; top: -20px; width: 12px; height: 18px; z-index: 1;
+    animation: fall linear forwards;
+  }
+  @keyframes fall { to { transform: translateY(110vh) rotate(720deg); } }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>🏴‍☠️ Pirate Token Roller</h1>
+    <div class="odds">Win chance: 1 in 700,000</div>
+    <button id="roll">ROLL</button><br>
+    <button id="auto" class="secondary">Auto roll: OFF</button>
+    <div class="result" id="result">Press ROLL</div>
+    <div class="stats">
+      Rolls: <span id="rolls">0</span><br>
+      Last roll: <span id="last">–</span>
+    </div>
+  </div>
+
+<script>
+  const ODDS = 700000;
+  let rolls = 0, won = false, autoTimer = null;
+  const $ = id => document.getElementById(id);
+
+  // Fair random integer in [0, ODDS) using crypto (rejection sampling, no bias)
+  function fairRandom() {
+    const max = Math.floor(0x100000000 / ODDS) * ODDS;
+    const buf = new Uint32Array(1);
+    do { crypto.getRandomValues(buf); } while (buf[0] >= max);
+    return buf[0] % ODDS;
+  }
+
+  function roll() {
+    if (won) return;
+    rolls++;
+    const n = fairRandom() + 1;           // 1..700000
+    $('rolls').textContent = rolls.toLocaleString();
+    $('last').textContent = n.toLocaleString();
+    if (n === 1) return win();
+    $('result').textContent = 'No luck... ☠️';
+  }
+
+  function win() {
+    won = true;
+    stopAuto();
+    document.body.classList.add('win');
+    $('result').textContent = '🎉 PIRATE TOKEN! 🎉';
+    $('roll').textContent = 'YOU WON';
+    setInterval(spawnConfetti, 60);
+  }
+
+  function spawnConfetti() {
+    const c = document.createElement('div');
+    c.className = 'confetti';
+    c.style.left = Math.random() * 100 + 'vw';
+    c.style.background = `hsl(${Math.random() * 360}, 100%, 55%)`;
+    c.style.animationDuration = 2 + Math.random() * 3 + 's';
+    document.body.appendChild(c);
+    setTimeout(() => c.remove(), 5000);
+  }
+
+  function stopAuto() {
+    clearInterval(autoTimer); autoTimer = null;
+    $('auto').textContent = 'Auto roll: OFF';
+  }
+
+  $('roll').onclick = roll;
+  $('auto').onclick = () => {
+    if (autoTimer) return stopAuto();
+    autoTimer = setInterval(roll, 10);   // ~100 rolls per second
+    $('auto').textContent = 'Auto roll: ON';
+  };
+</script>
+</body>
+</html>
